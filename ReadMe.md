@@ -12,7 +12,6 @@ A full-featured To-Do List web application built with Node.js, Express, MongoDB,
 - [Views](#views)
 - [Middlewares](#middlewares)
 - [How It Works](#how-it-works)
-- [Setup & Installation](#setup--installation)
 
 ---
 
