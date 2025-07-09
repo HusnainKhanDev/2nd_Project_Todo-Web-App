@@ -1,0 +1,21 @@
+{
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "Creating a full project which is To DO List",
+  "main": "Server.js",
+  "scripts": {
+    "start": "nodemon Server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.2",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.16",
+    "nodemon": "^3.1.7"
+  }
+}
