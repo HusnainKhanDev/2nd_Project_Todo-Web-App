@@ -221,8 +221,6 @@ function ShowMessage(msg){
     }, 3000)
 }
 
-//geting token---------------------------------------------------------------------------
-
 let token = sessionStorage.getItem("authtoken");
 document.getElementById("homeLink").href = `/login/to/display/${token}`;
 

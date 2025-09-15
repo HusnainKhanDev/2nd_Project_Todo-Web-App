@@ -4,7 +4,8 @@ const UserSchema = require("../1 Model/UserModel");
 const SendEmail = require("./SendEmail");
 
 //5 * in it represent minute, hour, days, month, weeks 0 0 means start of the day 12AM 0 represent start
-crons.schedule('* * * * *', async () => {
+crons.schedule('* 5 * * *', async () => {
+    
     console.log("Ya chal raha ha ")
     const upcomingDate = new Date();
     upcomingDate.setDate(upcomingDate.getDate() + 1);

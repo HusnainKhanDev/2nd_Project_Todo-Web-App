@@ -26,7 +26,7 @@ let signup = async (req, res) => {
         }
     }
 
-    res.status(200).render("Login", { msg: "" , token: "" })
+    res.status(200).render("Login", { msg: "", token: "" })
 };
 
 let login = async (req, res) => {
@@ -47,15 +47,17 @@ let login = async (req, res) => {
         if (!comparePass) {
             return res.status(404).render("Login", { msg: "Password Not Match!", token: "" })
         }
+
+        let token = jwt.sign({ ID: findUser._id }, "something to make token strong", { expiresIn: 10000 })
+
+        return res.render("Login", {msg: "", token: token})
     }
     catch (err) {
         console.log("ERROR" + err)
         return res.status(400).render("Login", { msg: "Error While Login", token: "" })
     }
 
-    let token = jwt.sign({ ID: findUser._id }, "something to make token strong", { expiresIn: 10000 })
-    console.log("Token: " + token);
-    return res.render("Login", { msg: "", token: token })
+
 }
 
 

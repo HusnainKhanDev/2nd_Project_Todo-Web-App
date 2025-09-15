@@ -1,0 +1,25 @@
+services:
+  mongo:
+    image: mongo:6
+    container_name: mongo
+    expose:
+      - "27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin1
+      MONGO_INITDB_ROOT_PASSWORD: root1
+    volumes:
+      - todoapp-data:/data/db
+
+  todoapp:
+    build: .
+    image: mytodoapp:1.0 # image tag with build gives name to image and without it, it specifies the image
+    container_name: todoapp
+    ports:
+      - "4080:4080"
+    environment: 
+      MONGO_URI: mongodb://admin1:root1@mongo:27017/TodoApp?authSource=admin
+    depends_on:
+      - mongo
+
+volumes:
+  todoapp-data:

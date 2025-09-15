@@ -15,7 +15,7 @@ const sendEmailNotification = async (toEmail) => {
         from: 'hasnainkhan6106@gmail.com',
         to: toEmail,
         subject: "Todo Expiretion Notification",
-        text: "Your some tasks will bw expired in next 24 hours. hurry! check them out"
+        text: "Your some tasks will be expired in next 24 hours. hurry! check them out"
     };
 
     try {

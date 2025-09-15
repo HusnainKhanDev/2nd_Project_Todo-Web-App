@@ -116,15 +116,17 @@ p {
             <p><%= msg %></p>
         <% } %>
     </div>
-</body>
 
 <script>
     let token = "<%= token %>";
     
     if (token) {
-        sessionStorage.setItem("authtoken", token)
+        sessionStorage.setItem('authtoken', token)
         window.location.href = `/login/to/display/${token}`; // redirect to another page 
     }
 </script>
+</body>
+
+
 
 </html>

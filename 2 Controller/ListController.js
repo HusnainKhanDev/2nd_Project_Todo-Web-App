@@ -28,13 +28,8 @@ let createList = async (req, res) => {
 };
 
 
-
-
-
 let display = async (req, res) => {
-    let ID = req.params.id || req.UserID;
-
-    // console.log("Everything is alright, User ID: " + ID);
+    let ID = req.UserID;
 
     try {
 
@@ -53,7 +48,6 @@ let display = async (req, res) => {
         res.status(500).render("home", { ListData: [] });
     }
 };
-
 
 
 let deleteTask = async (req, res) => {

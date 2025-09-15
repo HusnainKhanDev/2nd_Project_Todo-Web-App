@@ -20,9 +20,7 @@ let isLogedIn = (req, res, next) => {
         }
 
         req.UserID = decode.ID
-        // console.log("is login" + req.UserID)
-        // console.log("Token: ", token);
-        // console.log("Decoded UserID: ", decode.ID);
+        console.log("Decoded UserID: ", decode.ID);
         next()
     })
 }

@@ -1,4 +1,5 @@
 const express = require("express")
+const env = require("dotenv").config()
 const mongoose = require("mongoose")
 const path = require('path')//helps in defining the path of views directory
 const emailSendService = require("./5 MiddleWares/ScheduleEmail")
@@ -12,8 +13,8 @@ app.listen(port, ()=>{
 })
 
 
-// DataBase----------------------
-mongoose.connect("mongodb://localhost/TO_DO_List").then(()=>{
+// DataBase----------------------process.env.MONGO_URI use it while making docker image
+mongoose.connect(`mongodb://localhost/TO_DO_List`).then(()=>{
     console.log("Data Base Connected: ")
 }).catch(()=>{
     console.log("Data Base Not Connected: ")
