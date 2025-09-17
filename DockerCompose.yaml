@@ -12,7 +12,7 @@ services:
 
   todoapp:
     build: .
-    image: mytodoapp:1.0 # image tag with build gives name to image and without it, it specifies the image
+    image: todoappimage:1.0 # image tag with build gives name to image and without it, it specifies the image
     container_name: todoapp
     ports:
       - "4080:4080"

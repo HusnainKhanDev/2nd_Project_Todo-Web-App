@@ -14,7 +14,7 @@ app.listen(port, ()=>{
 
 
 // DataBase----------------------process.env.MONGO_URI use it while making docker image
-mongoose.connect(`mongodb://localhost/TO_DO_List`).then(()=>{
+mongoose.connect(process.env.MONGO_URI ||`mongodb://localhost/TO_DO_List`).then(()=>{
     console.log("Data Base Connected: ")
 }).catch(()=>{
     console.log("Data Base Not Connected: ")
