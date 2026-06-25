@@ -8,11 +8,11 @@ let app = express()
 
 
 // DataBase----------------------process.env.MONGO_URI use it while making docker image
-mongoose.connect(process.env.MONGO_URI ||`mongodb://localhost/TO_DO_List`).then(()=>{
-    console.log("Data Base Connected: ")
-}).catch(()=>{
-    console.log("Data Base Not Connected: ")
-})
+// mongoose.connect(process.env.MONGO_URI ||`mongodb://localhost/TO_DO_List`).then(()=>{
+//     console.log("Data Base Connected: ")
+// }).catch(()=>{
+//     console.log("Data Base Not Connected: ")
+// })
 
 // MiddleWare--------------------
 app.use(express.json())
