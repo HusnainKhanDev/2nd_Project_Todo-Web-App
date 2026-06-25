@@ -4,7 +4,9 @@
   "description": "Creating a full project which is To DO List",
   "main": "Server.js",
   "scripts": {
-    "start": "nodemon Server.js"
+    "start": "node Server.js",
+    "dev": "nodemon Server.js",
+    "test": "vitest run"
   },
   "author": "",
   "license": "ISC",
@@ -18,5 +20,8 @@
     "node-cron": "^3.0.3",
     "nodemailer": "^6.9.16",
     "nodemon": "^3.1.7"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.9"
   }
 }
