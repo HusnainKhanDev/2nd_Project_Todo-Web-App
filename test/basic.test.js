@@ -1,7 +1,18 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, beforeAll, afterAll} from "vitest";
 import request from "supertest";
 import jwt from "jsonwebtoken";
 import app from "../app";
+import {connectDB, closeDB} from "./setup"
+
+
+beforeAll(async () => {
+  await connectDB();
+});
+
+afterAll(async () => {
+  await closeDB();
+});
+
 
 describe("Todo Application Tests", () => {
 
