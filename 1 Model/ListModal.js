@@ -1,30 +1,20 @@
-import { describe, it, expect } from 'vitest';
+const mongoose = require("mongoose")
+let ListSchema = new mongoose.Schema({
+    title: { required: true, type: String, unique: true },
 
-describe('Todo Application Tests', () => {
-  it('should create a new task', () => {
-    const tasks = [];
+    description: { type: String, default: "Best Of Luck :)" },
 
-    const newTask = {
-      title: 'Complete DevOps Assignment',
-      description: 'Submit before deadline',
-      endDate: '2026-08-20'
-    };
+    endDate: {
+        type: String, required: true, set: (value) => {
 
-    tasks.push(newTask);
+            const date = new Date(value); return date.toISOString().split('T')[0]; //it is function which runs before inserting a data in DB it converts ISO format date in to ISO string First then break it using seprater "T" and insert its first part [0] 
+        }
+    },
 
-    expect(tasks.length).toBe(1);
-    expect(tasks[0].title).toBe('Complete DevOps Assignment');
-  });
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "user" }
 
-  it('should delete a task', () => {
-    const tasks = [
-      { title: 'Task 1' },
-      { title: 'Task 2' }
-    ];
+}, { timestamps: true, versionKey: false })
 
-    tasks.splice(0, 1);
 
-    expect(tasks.length).toBe(1);
-    expect(tasks[0].title).toBe('Task 2');
-  });
-});
+
+module.exports = mongoose.model("list", ListSchema)

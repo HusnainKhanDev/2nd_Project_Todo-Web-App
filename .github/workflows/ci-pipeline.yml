@@ -1,18 +1,19 @@
 name: Node.js CI Pipeline
 
-on:
-  push:
+on: # when will script run
+  push: 
     branches:
       - main
 
-jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
+jobs: # can contain multiple jobs
+  build-and-test: # jo b name 
+    # job runs on ubuntu server
+    runs-on: ubuntu-latest # creates temporary ubuntu machine which will be deleted after running all commands
 
     steps:
       # Download repository code
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 # prebuilt GitHub Action. download code in ubuntu machine
 
       # Install Node.js
       - name: Setup Node.js
